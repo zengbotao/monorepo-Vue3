@@ -1,0 +1,27 @@
+{
+  "name": "@zbt/Demo",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "files": ["dist"],
+  "main": "./dist/Demo.umd.cjs",
+  "module": "./dist/Demo.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.29",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "sass": "^1.72.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.6",
+    "vite-plugin-dts": "^3.7.3",
+    "vue-tsc": "^1.8.27"
+  }
+}
