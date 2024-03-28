@@ -1,3 +1,15 @@
 node_modules
+**/node_modules
 dist
 .pnpm-debug.log
+# umi
+.umi
+.umi-production
+.umi-test
+
+# screenshot
+screenshot
+.firebase
+.eslintcache
+
+build
