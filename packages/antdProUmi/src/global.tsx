@@ -1,10 +1,17 @@
+// 全局前置脚本文件。
+// Umi 区别于其他前端框架，没有显式的程序主入口（如 src/index.ts），所以当你有需要在应用前置、全局运行的逻辑时，
+// 优先考虑写入 global.ts 。
+// 当你需要添加全局 Context 、修改应用运行时，请使用 app.tsx 。
 import { useIntl } from '@umijs/max';
 import { Button, message, notification } from 'antd';
 import defaultSettings from '../config/defaultSettings';
 
+// 配置 PWA 相关的功能，包括离线提示、更新提示以及服务 worker 的注册和注销。
+// 它还包含了清除浏览器缓存的功能，以确保应用在更新时能够正确加载最新的资源。
 const { pwa } = defaultSettings;
 const isHttps = document.location.protocol === 'https:';
 
+// 清除浏览器缓存。
 const clearCache = () => {
   // remove all caches
   if (window.caches) {
@@ -29,6 +36,8 @@ if (pwa) {
   // Pop up a prompt on the page asking the user if they want to use the latest version
   window.addEventListener('sw.updated', (event: Event) => {
     const e = event as CustomEvent;
+
+    // 用于重新加载页面
     const reloadSW = async () => {
       // Check if there is sw whose state is waiting in ServiceWorkerRegistration
       // https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration

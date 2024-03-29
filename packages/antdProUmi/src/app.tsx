@@ -48,6 +48,9 @@ const loginPath = '/user/login';
 // ProLayout 支持的api https://procomponents.ant.design/components/layout
 export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) => {
   console.log(initialState)
+  let HearContent=()=>{
+    return <div style={{display:'flex'}}><Header/><div>menuExtraRender</div></div>
+  }
   return {
     ...defaultSettings,
     actionsRender: () => [<Question key="doc" />, <SelectLang key="SelectLang" />],
@@ -61,7 +64,8 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     waterMarkProps: {
       content: initialState?.currentUser?.name,
     },
-    headerContentRender:Header,
+    // menuItemRender:() =><div>{'headerRender'}</div>,
+    headerContentRender:() =><HearContent/>,
     footerRender: () => <Footer />,
     onPageChange: () => {
       const { location } = history;
@@ -81,7 +85,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
       : [],
 
     rightContentRender:()=><AvatarDropdown>{'avatarChildren'}</AvatarDropdown>,
-    menuExtraRender:  () =><div>menuExtraRender</div>,
+    menuExtraRender:  () =><div>当前title</div>,
     // 自定义 403 页面
     unAccessible: <div>unAccessible</div>,
     // 增加一个 loading 的状态
