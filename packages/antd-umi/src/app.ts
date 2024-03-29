@@ -14,3 +14,14 @@ export const layout = () => {
     },
   };
 };
+
+export const qiankun = {
+  async bootstrap(props){
+    console.log(props)
+  },
+  async mount(props){
+    if(window.__POWER_BY_QIANKUN__){
+      window.__QIANKUN_PROPS__ = props;
+    }
+  }
+};

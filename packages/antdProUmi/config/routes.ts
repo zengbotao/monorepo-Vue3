@@ -44,8 +44,14 @@ export default [
     ],
   },
   {
+    name: 'app1',
+    icon: 'warning',
+    layout: true,
+    path: '/app1/table',
+    microApp: 'app1',
+  },
+  {
     path: '/dashboard',
-    name: 'dashboard',
     icon: 'dashboard',
     routes: [
       {
@@ -205,6 +211,7 @@ export default [
       },
     ],
   },
+
   {
     name: 'exception',
     icon: 'warning',
@@ -234,6 +241,7 @@ export default [
       },
     ],
   },
+
   {
     name: 'account',
     icon: 'user',

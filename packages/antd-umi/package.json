@@ -1,4 +1,5 @@
-{
+{ 
+  "name":"app1",
   "private": true,
   "author": "zengbotao <2898487084@qq.com>",
   "scripts": {

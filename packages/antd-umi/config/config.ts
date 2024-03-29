@@ -32,4 +32,7 @@ export default defineConfig({
     },
   ],
   npmClient: 'pnpm',
+  qiankun: {
+    slave: {},
+  },
 });

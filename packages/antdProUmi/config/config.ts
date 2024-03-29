@@ -158,7 +158,10 @@ export default defineConfig({
   mfsu: {
     strategy: 'normal',
   },
-  base: '/docs/',
+  base: '',
   esbuildMinifyIIFE: true,
   requestRecord: {},
+  qiankun: {
+    master: {},
+  },
 });
